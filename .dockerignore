@@ -1,0 +1,13 @@
+# Dependency directories
+node_modules
+
+# Directory for database
+db
+
+# Docs files
+README.md
+LICENSE.md
+
+# Git files
+.git
+.gitignore

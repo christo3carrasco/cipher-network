@@ -1,0 +1,26 @@
+version: "3"
+services:
+  app:
+    build: .
+    container_name: cipher_network
+    ports:
+      - "8545:8545"
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+      - ./db:/usr/src/app/db
+
+  mongo:
+    image: mongo:4.4
+    container_name: mongo_db
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_DATABASE: cipherchoice
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
