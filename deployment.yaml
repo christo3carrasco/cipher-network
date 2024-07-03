@@ -15,5 +15,6 @@ spec:
       containers:
         - name: eth-network
           image: eth-network:latest
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8545
