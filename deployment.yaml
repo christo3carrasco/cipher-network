@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eth-network
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: eth-network
+  template:
+    metadata:
+      labels:
+        app: eth-network
+    spec:
+      containers:
+        - name: eth-network
+          image: eth-network:latest
+          ports:
+            - containerPort: 8545
